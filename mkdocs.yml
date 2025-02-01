@@ -1,6 +1,6 @@
-site_name: Basic MkDocs Example Project
+site_name: 星落 / Starfall
 theme:
-  name: readthedocs
+  name: material
   highlightjs: true
 plugins:
   - search

@@ -7,7 +7,7 @@ that creates recipes mixing random ingredients. It pulls data from the
 [Open Food Facts database](https://world.openfoodfacts.org/) and offers
 a *simple* and *intuitive* API.
 
-Check out the [usage](usage) section for further information, including how to [install](usage#installation) the project.
+Check out the [usage](usage.md) section for further information, including how to [install](usage.md#installation) the project.
 
 !!! note
 

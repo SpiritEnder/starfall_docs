@@ -1,9 +1,8 @@
-Example: Basic MkDocs project for Read the Docs
+星落 / Starfall 项目文档
 ===============================================
 
-[![Documentation Status](https://readthedocs.org/projects/example-mkdocs-basic/badge/?version=latest)](https://example-mkdocs-basic.readthedocs.io/en/latest/?badge=latest)
 
-This example shows the an integration of a basic MkDocs project with Read the Docs. You\'re encouraged to view it to get inspiration and copy & paste from the files in the source code. If you are using Read the Docs for the first time, have a look at the official [Read the Docs Tutorial](https://docs.readthedocs.io/en/stable/tutorial/index.html).
+《星落》(Starfall) 是一个使用Godot引擎开发的回合制游戏，整体系统设计以《暗黑地牢》为摹本。 [Read the Docs Tutorial](https://docs.readthedocs.io/en/stable/tutorial/index.html).
 
 📚 [docs/](https://github.com/readthedocs-examples/example-mkdocs-basic/blob/main/docs/)<br>
 A basic MkDocs project lives in `docs/`, it was generated using MkDocs defaults. All the `*.md` make up sections in the documentation.
