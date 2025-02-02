@@ -14,3 +14,9 @@ markdown_extensions:
   - markdown_include.include:
       base_path: .
   - admonition
+
+nav:
+  - 欢迎来到星落！:
+    - 星落项目简介: index.md
+  - 战斗系统设计:
+    - 认识战斗系统: battle_system/battle_systems_guide.md
