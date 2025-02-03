@@ -1,11 +1,7 @@
 {!README.md!}
 
-# Welcome to Lumache's documentation!
+# 《星落》项目文档
 
-**星落** (/lu\'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients. It pulls data from the
-[Open Food Facts database](https://world.openfoodfacts.org/) and offers
-a *simple* and *intuitive* API.
+**星落** 项目文档创建，是为了方便开发者和读者了解系统设计。
 
-Check out the [usage](usage.md) section for further information, including how to [install](usage.md#installation) the project.
-
+此文档已在 [Read the docs](https://starfall-docs.readthedocs.io/zh-cn/latest) 托管，点击连接可以查看详细信息。
