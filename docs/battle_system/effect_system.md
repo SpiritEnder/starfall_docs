@@ -88,7 +88,7 @@ func round_end(): # 回合结束时触发
 
 成员名|类型|解释
 ---|---|---
-name |String | 效果名，唯一标识
+effect_name |String | 效果名，唯一标识
 tag |Array | 标签（文本数组）
 visible |bool | 可见状态，效果是否展示在状态栏
 trigger |Array[UnitEffectTrigger] | 效果触发器集合，单个元素为[UnitEffectTrigger](#class.UnitEffectTrigger)
