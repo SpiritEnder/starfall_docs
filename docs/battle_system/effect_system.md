@@ -66,11 +66,14 @@ func round_end(): # 回合结束时触发
 
 很显然，单单效果这一个类已经无法做到这么多事情了。让我们先看看其它已有的设计，有没有可以复用的玩意：
 
-- [指令系统：动态数据获取和计算](command_system.md#指令系统)
-- [Inst计算块：高拓展性的轻量数据组件](unit_attribute.md#类inst)
+- [指令系统：动态数据获取和计算](docs/battle_system/command_system.md#)
+- [Inst计算块](docs/classes/Inst.md#)
 
 现在一切都可以实现了！……吗？
 
+ ## <span id="effect">效果</span>
+
+- [类：UnitEffect](docs/classes/UnitEffect.md#)
 
 ## 效果的效果是什么？
 
@@ -82,61 +85,3 @@ func round_end(): # 回合结束时触发
 ## 其他的内容
 
 
-### <span id="class.UnitEffect">类：UnitEffect (效果)</span>
-
-文档中简称为Effect。
-
-成员名|类型|解释
----|---|---
-effect_name |String | 效果名，唯一标识
-tag |Array | 标签（文本数组）
-visible |bool | 可见状态，效果是否展示在状态栏
-trigger |Array[UnitEffectTrigger] | 效果触发器集合，单个元素为[UnitEffectTrigger](#class.UnitEffectTrigger)
-effect |Array | 实际效果(指令)
-content |Dictionary | 展示的文本和图像内容
-
-### <span id="class.UnitEffectTrigger">类：UnitEffectTrigger (效果触发器)</span>
-
-文档中简称为EffectTrigger。
-
-成员名|类型|解释
----|---|---
-trigger_name |String | 触发器识别名
-trigger_times |int | 总生效次数
-trigger_times_run |bool | 触发时是否执行指令
-trigger_destroy |bool | 触发次数耗尽时是否销毁效果
-trigger_destroy_run| bool | 触发次数耗尽时是否执行指令
-trigger_global |bool | 是否为全局触发器
-target |[UnitEffect](#class.UnitEffect) | 指向其触发的效果
-
-#### 系统内置触发器
-
-内置触发器识别名|触发位置|参考条目
----|---|---
- round_start| 角色回合开始时|[回合系统：回合前后](round_system.md#before_and_after_the_round)
- round_end| 角色回合结束时|[回合系统：回合前后](round_system.md#before_and_after_the_round)
- global_round_start| 全局回合开始时|[回合系统：全局回合](round_system.md#全局回合)
- global_round_end| 全局回合结束时|
- skill_emit| 角色技能施放前|
- skill_emit_after| 角色技能施放后|
- skip| 角色跳过轮次行动时|
- target_effect_append| 向目标添加效果前|
- target_effect_append_after| 向目标添加效果后|
- target_effect_remove| 为目标移除效果时|
- target_effect_remove_after| 为目标移除效果后|
- effect_append| 自身被添加效果时|
- effect_append_after| 自身被添加效果后|
- effect_remove| 为自身移除效果时|
- effect_remove_after| 为自身移除效果后|
- state_health| 自身接受治疗时|
- state_damage| 自身受到伤害时|
- state_shield| 自身护盾量变化时|
- state_zero| 自身血量归零时|
- state_revive| 自身被复活时|
- state_kill| 自身被击杀时|
- target_state_health| 敌方接受治疗时|
- target_state_damage| 敌方受到伤害时|
- target_state_shield|敌方护盾量变化时|
- target_state_zero| 敌方血量归零时|
- target_state_revive| 敌方被复活时|
- target_state_kill| 敌方被击杀时 |

@@ -15,14 +15,3 @@ markdown_extensions:
       base_path: .
   - admonition
 
-nav:
-  - 欢迎来到星落！:
-    - 星落项目简介: index.md
-  - 战斗系统设计:
-    - 认识战斗系统: battle_system/battle_systems_guide.md
-    - 战斗系统组成:
-      - 指令系统: battle_system/command_system.md
-      - 单位属性: battle_system/unit_attribute.md
-      - 回合系统: battle_system/round_system.md
-      - 位置系统: battle_system/place_system.md
-      - 效果系统: battle_system/effect_system.md

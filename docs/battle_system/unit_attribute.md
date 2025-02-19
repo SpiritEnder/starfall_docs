@@ -26,16 +26,9 @@
 
 但在本项目中，我们使用另一种解法：将这些数值属性解释为[Inst](#类：Inst)的集合。
 
-## 类：Inst
-
-成员名|类型|解释
----|---|---
-id |string|标识名称。由不同Effect施加的Inst具有不同的id，可以通过此id避免重复添加inst
-at |array[string]|生效位置，可以看作分类，用作指定类别数据的统计
-const|bool|是否为“常量”。如果为否，计算时会把value视为指令，返回该指令的结果。
-value |variant|值，任意变量。
-
-## Inst有啥用？
+ ## <span id="inst"> Inst有啥用？</span>
+ 
+- [类：Inst](docs/classes/Inst.md#)
 
 随着Inst的横空出世，我们的`攻击力`属性现在看起来是这样的：
 
