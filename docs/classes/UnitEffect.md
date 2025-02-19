@@ -1,27 +1,31 @@
-# <span id="class.UnitEffect">类：UnitEffect (效果)</span>
+<span id="class.UnitEffect">类：UnitEffect (效果)</span>
+===
 
 文档中简称为Effect。
 
 成员名|类型|解释
 ---|---|---
-effect_name | String | 效果名，唯一标识
-effect_tag | Array | 标签（文本数组）
-effect_resource | Dictionary | 效果资源，展示的文本和图像内容。结构详见[效果资源结构](#struct.effect_resource)
-effect_trigger | Dictionary | 效果触发器，键值对为触发名及其回调函数。触发名详见[系统内置触发名](#struct.effect_trigger)
-effect_callback | Dictionary | 键：触发名，值：效果触发回调函数（[Inst](unit_attribute.md#class.inst)的集合）
-effect_data | Dictionary | 储存效果中可能会使用到的辅助元数据，比如剩余回合数或剩余生效次数
+[effect_name](#struct.effect_name) | String | 效果名，唯一标识
+[effect_tag](#struct.effect_tag) | Array | 标签（文本数组）
+[effect_resource](#struct.effect_resource) | Dictionary | 效果资源，展示的文本和图像内容。
+[effect_trigger](#struct.effect_trigger) | Dictionary | 效果触发器，键值对为触发名及其回调函数。
+[effect_callback](#struct.effect_callback) | Dictionary | 键：触发名，值：效果触发回调函数（[Inst](/battle_system/unit_attribute#class.inst)的集合）
+[effect_data](#struct.effect_data) | Dictionary | 储存效果中可能会使用到的辅助元数据，比如剩余回合数或剩余生效次数
 
- ## <span id="struct.effect_name">effect_name 效果名称</span>
+<span id="struct.effect_name">effect_name 效果名称</span>
+---
 
 用于唯一表示效果。具有相同效果名称的效果重复添加时，只会刷新属性而不是建立一个新效果。若要使效果看起来是可叠加的，可以考虑使用`_restore`触发，并在回调中写叠层逻辑。
 
- ## <span id="struct.effect_tag">effect_tag 效果标签</span>
+<span id="struct.effect_tag">effect_tag 效果标签</span>
+---
 
 标签数组，用于标识效果的各种类型，用于辅助系统和其他指令。比如，标注这个效果是增益还是减益。下面提供了一些常用的标签和含义：
 
-- [所有的标签(tags)](docs/constant/all_the_tags.md#)
+- [所有的标签(tags)](/constant/all_the_tags#)
 
- ## <span id="struct.effect_resource">effect_resource 效果资源</span>
+<span id="struct.effect_resource">effect_resource 效果资源</span>
+---
 
 这并不是一个类。以下提供了系统内置的可能会读取或展示的属性，不须全部包含。
 
@@ -32,10 +36,11 @@ title|String|标题文本，可选
 content|String|内容文本，可选
 icon|Image|图标，可选
 
- ## <span id="struct.effect_trigger">effect_trigger 效果触发器</span>
+<span id="struct.effect_trigger">effect_trigger 效果触发器</span>
+---
 
-词典`键`为触发器识别名。可以使用内置识别名，也可以自定义。  
-词典`值`为回调函数名。即`effect_callback`中的键。
+键：触发器识别名。可以使用内置识别名，也可以自定义。  
+值：回调函数名。即`effect_callback`中的键。
 
 内置识别名有固定的触发位置。在使用内置识别名时，系统在指定的位置会激活触发器，并执行效果在`值`中指定的回调函数。  
 自定义识别名不会自动触发，需要在技能或是指令中使用`-trigger`来手动触发。
@@ -43,13 +48,13 @@ icon|Image|图标，可选
 触发效果时，指令会在尾部附加一个`data`，类型为词典，包含了一部分可能会用到的已有参数，比如，效果本身（键为`effect`）。对于局部触发器，还会默认提供持有该效果的单位（键为`unit`）。  
 
 !!! Note
-你可以在指令中使用`-get`来获取词典内的值，比如*-get*,*effect*,`data`，等同于`data[effect]`。详见[指令系统](docs/battle_system/command_system.md#)
+你可以在指令中使用`-get`来获取词典内的值，比如*get*,*effect*,`data`，等同于`data[effect]`。详见[指令系统](/battle_system/command_system#)
 
 内置触发器识别名|触发位置|提供条目|参考条目
 ---|---|---|---
- round_start| 角色回合开始时 | `上一位行动者` | [回合系统：回合前后](round_system.md#before_and_after_the_round)
- round_end| 角色回合结束时 | `行动结果`、`下一位行动者` |[回合系统：回合前后](round_system.md#before_and_after_the_round)
- global_round_start| 全局回合开始时||[回合系统：全局回合](round_system.md#全局回合)
+ round_start| 角色回合开始时 | `上一位行动者` | [回合系统：回合前后](/battle_system/round_system#before_and_after_the_round)
+ round_end| 角色回合结束时 | `行动结果`、`下一位行动者` |[回合系统：回合前后](/battle_system/round_system#before_and_after_the_round)
+ global_round_start| 全局回合开始时||[回合系统：全局回合](/battle_system/round_system#全局回合)
  global_round_end| 全局回合结束时||
  skill_emit| 角色技能施放前|`将要施放的技能`||
  skill_emit_after| 角色技能施放后|`技能结果`||
@@ -69,7 +74,8 @@ icon|Image|图标，可选
  state_revive| 自身被复活时|
  state_kill| 自身被击杀时|
  
- ## <span id="struct.effect_callback">effect_callback 效果回调</span>
+<span id="struct.effect_callback">effect_callback 效果回调</span>
+---
 
 键：触发名  
 值：Inst的集合。
@@ -87,7 +93,8 @@ effect_callback["round_start"] = [
 当触发`round_start`时，会按顺序执行`Inst_1`,`Inst_2`...  
 指定回调名下的所有inst都会执行，如果想要中断，请在后续的inst中使用逻辑判断，比如设置和读取`data["continue"] = false`
  
- ## <span id="struct.effect_data">effect_data 效果数据</span>
+<span id="struct.effect_data">effect_data 效果数据</span>
+---
 
 效果触发时，在指令中默认提供。对`effect`使用`-get,effect_data`访问。
 
@@ -127,4 +134,4 @@ effect_callback["destroy_test"] = [{
 
 ## 其他内容
 
-- [effect_system 效果系统](docs/battle_system/effect_system.md#effect)
+- [effect_system 效果系统](/battle_system/effect_system#effect)

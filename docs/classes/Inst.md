@@ -13,5 +13,5 @@ value |variant|值，任意变量。
 
 ## 其它内容
 
-- [UnitAttribute 单位属性在战斗系统中的应用](docs/battle_system/unit_attribute.md#inst)
-- [类：UnitAttribute](docs/classes/UnitAttribute.md#)
+- [UnitAttribute 单位属性在战斗系统中的应用](/battle_system/unit_attribute#inst)
+- [类：UnitAttribute](UnitAttribute.md)

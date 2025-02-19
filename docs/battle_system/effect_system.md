@@ -66,14 +66,14 @@ func round_end(): # 回合结束时触发
 
 很显然，单单效果这一个类已经无法做到这么多事情了。让我们先看看其它已有的设计，有没有可以复用的玩意：
 
-- [指令系统：动态数据获取和计算](docs/battle_system/command_system.md#)
-- [Inst计算块](docs/classes/Inst.md#)
+- [指令系统：动态数据获取和计算](/battle_system/command_system#)
+- [Inst计算块](/classes/Inst#)
 
 现在一切都可以实现了！……吗？
 
- ## <span id="effect">效果</span>
+## <span id="effect">效果</span>
 
-- [类：UnitEffect](docs/classes/UnitEffect.md#)
+- [类：UnitEffect](/classes/UnitEffect#class.UnitEffect)
 
 ## 效果的效果是什么？
 
